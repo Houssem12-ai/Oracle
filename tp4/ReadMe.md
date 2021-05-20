@@ -192,7 +192,16 @@ create user ops2 identified by ops2;
      * Création,lecture, modification de structure et suppression de tables.
 
 ```sql
----
+ grant 
+create procedure,
+create view,
+create sequence,
+create session,
+create any table,
+alter any table,
+drop any table
+to 
+dev1;
 ```
 
 ¤   **Une fois qu'un utilisateur est créé, le DBA peut octroyer des privilèges de système spécifiques à cet utilisateur.**
@@ -201,7 +210,16 @@ create user ops2 identified by ops2;
    - **Révoquer tous les privilèges associès à l'utilisateur dev1 :** 
 
 ```sql
----
+revoke
+create procedure,
+create view,
+create sequence,
+create session,
+create any table,
+alter any table,
+drop any table
+from
+dev1;
 ```
 
  
