@@ -198,6 +198,7 @@ create view,
 create sequence,
 create session,
 create any table,
+select any table,
 alter any table,
 drop any table
 to 
@@ -216,6 +217,7 @@ create view,
 create sequence,
 create session,
 create any table,
+select any table,
 alter any table,
 drop any table
 from
@@ -242,14 +244,39 @@ dev1;
      C) Le rôle de l'équipe DevSecOps permet d'avoir tous les privilèges avec mode administrateur de la base:  
 
 ```sql
----
+create role dev;
+grant 
+create procedure,
+create view,
+create sequence,
+create session,
+create any table,
+select any table,
+alter any table,
+drop any table
+to 
+dev;
 ```
+
 ```sql
----
-```
+create role test;
+grant
+create session,
+select any table,
+connect
+to 
+test;
+
 ```sql
----
+create role ops;
+grant role ops;
+grant
+ALL PRIVILEGES,
+dba
+to
+ops;
 ```
+
 ```sql
 ---
 ```
