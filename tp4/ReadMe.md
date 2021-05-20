@@ -338,7 +338,17 @@ GRANT select ON emp TO dev, ops;
 
 
 ```sql 
----
+create profile devv limit
+SESSIONS_PER_USER unlimited
+CPU_PER_SESSION 10000
+CPU_PER_CALL 1000
+CONNECT_TIME 45
+LOGICAL_READS_PER_SESSION DEFAULT
+LOGICAL_READS_PER_CALL 1000
+private_sga 15k
+password_life_time 68
+password_reuse_time 38;
+
 ```
 
 
@@ -355,7 +365,16 @@ GRANT select ON emp TO dev, ops;
   * ***Durée de vie en jours du mot de passe:*** ***60***
   * ***Nombre maximal de réutilisations de mot de passe:*** ***10***
 ```sql 
----
+create profile tester limit
+SESSIONS_PER_USER 5
+CPU_PER_SESSION unlimited
+CPU_PER_CALL 3000
+CONNECT_TIME 45
+LOGICAL_READS_PER_SESSION DEFAULT
+LOGICAL_READS_PER_CALL 1000
+private_sga 25k
+password_life_time 68
+password_reuse_time 10;
 ```
 
 **Créer un profile de ressources dédié à l'équipe devsecops avec les limitations suivantes:**
@@ -370,11 +389,21 @@ GRANT select ON emp TO dev, ops;
   * ***Nombre maximal de réutilisations de mot de passe:*** ***10***
 
 ```sql 
----
+create profile oper limit
+SESSIONS_PER_USER unlimited
+CPU_PER_SESSION unlimited
+CPU_PER_CALL 3000
+CONNECT_TIME 3600
+LOGICAL_READS_PER_SESSION DEFAULT
+LOGICAL_READS_PER_CALL 5000
+private_sga 80k
+password_life_time 60
+password_reuse_time 10;
 ```
 
   - **Attribuer à l'utilisateur "dev1", le profile qui lui correspond:** 
 ```sql
----
+alter user dev1 profile devv ;
+
 ```
 
