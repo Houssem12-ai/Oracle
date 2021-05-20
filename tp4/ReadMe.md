@@ -284,13 +284,18 @@ ops;
   
 
 ```sql
----
+grant dev to dev1;
+grant dev to dev2;
 ```
+
 ```sql
----
+grant test to test1;
+grant test to test2;
 ```
+
 ```sql
----
+grant ops to ops1;
+grant ops to ops2;
 ```
 
    - **Limiter l'accès pour les testeurs de sorte qu'ils n'accèdent qu'à la table des employés "EMP":** 
