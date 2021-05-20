@@ -299,23 +299,20 @@ grant ops to ops2;
 ```
 
    - **Limiter l'accès pour les testeurs de sorte qu'ils n'accèdent qu'à la table des employés "EMP":** 
-  
 
 ```sql
----
+REVOKE select any table FROM test;
 ```
 
  ```sql
----
+GRANT select ON emp TO test;
 ```
- 
- 
  
    - **Autoriser tous les utilisateurs sur le système pour interroger les données de la table EMP :** 
   
 
  ```sql
----
+GRANT select ON emp TO dev, ops;
 ```
 
 **Retirer les privilèges attribuées aux admins, ainsi que les utilisateurs qui ont reçu leurs privilèges sur la table EMP par un membre de l'équipe devsecops:**
