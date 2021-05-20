@@ -170,7 +170,15 @@ ________________________________________________________________________________
 
 
 ```sql
----
+
+create user dev1 identified by dev1
+create user dev2 identified by dev2
+
+create user test1 identified by test1;
+create user test2 identified by test2;
+
+create user ops1 identified by ops1;
+create user ops2 identified by ops2;
 ```
   --->  **Une fois qu'un utilisateur est créé, le DBA peut octroyer des privilèges de système spécifiques à cet utilisateur.**
  
