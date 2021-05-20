@@ -243,6 +243,8 @@ dev1;
      
      C) Le rôle de l'équipe DevSecOps permet d'avoir tous les privilèges avec mode administrateur de la base:  
 
+
+
 ```sql
 create role dev;
 grant 
@@ -266,6 +268,7 @@ select any table,
 connect
 to 
 test;
+```
 
 ```sql
 create role ops;
@@ -276,12 +279,6 @@ dba
 to
 ops;
 ```
-
-```sql
----
-```
-
-
  
    - **Attribuer à chaque utilisateur, le rôle qui lui correspond:** 
   
